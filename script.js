@@ -1,10 +1,3 @@
-// let tdBlock = document.getElementsByClassName("tdOne");
-
-// document.getElementById("tdOne").innerHTML = "";
-
-
-// <img src=""">
-
 let imgOne, imgTwo, imgThree, imgFour, imgFive, imgSix;
 
 imgOne      = "<img src='images/facebook.png' class='center'>";
