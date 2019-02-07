@@ -1,7 +1,6 @@
 // Memory game
 
 let pairs_array = [];
-let gameCompleted = 0;
 let pairCompleted = 0;
 
 tdGrid();
