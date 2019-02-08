@@ -29,8 +29,8 @@ function tdGrid() {
             }
             
             if(pairs_array[0] == pairs_array[1]) {
-                complete(pairs_array[0]);
-                complete(pairs_array[1]);
+                newPair(pairs_array[0]);
+                newPair(pairs_array[1]);
             }
 
             if (pairs_array.length == 2) {
