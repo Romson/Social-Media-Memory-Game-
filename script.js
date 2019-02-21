@@ -16,7 +16,6 @@ function tdGrid() {
     for(let i = 0; i < grid.length; i++) {
         let cell = grid[i];
 
-
         // Random image when clicked
         cell.addEventListener('click', () => {    
             cell.style.background = "white";
