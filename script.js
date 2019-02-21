@@ -9,30 +9,29 @@ function tdGrid() {
     let grid = document.getElementsByTagName("td");
     let cellClicked = randomImage();
 
+    for(let i = 0; i < cellClicked.length; i++) {
+        let cell = cellClicked[i];
+    }
+
     for(let i = 0; i < grid.length; i++) {
         let cell = grid[i];
 
-        for(let i = 0; i < cellClicked.length; i++) {
-            let cell = cellClicked[i];
-        }
 
         // Random image when clicked
         cell.addEventListener('click', () => {    
             cell.style.background = "white";
             cell.innerHTML = cellClicked[i];
-            pairs_array.push(cell.innerHTML);
+            pairs_array.push(cellClicked[i]);
 
             // Match found
             if(pairs_array[0] == pairs_array[1]) {
                 console.log("Match");
-            } 
-            else if(pairs_array[0] != pairs_array[1]) {
-                console.log("Try again!")
+                pairs_array = [];
             }
-
-            // if (pairs_array.length == 2) {
-            //     pairs_array = [];
-            // }
+            else if(pairs_array[1]) {
+                console.log("Try again!")
+                pairs_array = [];
+            }
         });
     }
 }
