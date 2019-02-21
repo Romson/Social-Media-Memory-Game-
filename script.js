@@ -1,41 +1,38 @@
 // Memory game
 
 let pairs_array = [];
-let pairCompleted = 0;
 
 tdGrid();
 
-// Id td Grid add to cell
 function tdGrid() {
+    // Select td and add to cell
     let grid = document.getElementsByTagName("td");
     let cellClicked = randomImage();
 
     for(let i = 0; i < grid.length; i++) {
         let cell = grid[i];
 
-    for(let i = 0; i < cellClicked.length; i++) {
-        let cell = cellClicked[i];
-    }
+        for(let i = 0; i < cellClicked.length; i++) {
+            let cell = cellClicked[i];
+        }
 
-        // Check for clicks
+        // Random image when clicked
         cell.addEventListener('click', () => {    
             cell.style.background = "white";
             cell.innerHTML = cellClicked[i];
             pairs_array.push(cell.innerHTML);
 
-            if(pairs_array[0] != pairs_array[1]) {
-                hideImage(pairs_array[0]);
-                hideImage(pairs_array[1]);
-            }
-            
+            // Match found
             if(pairs_array[0] == pairs_array[1]) {
-                newPair(pairs_array[0]);
-                newPair(pairs_array[1]);
+                console.log("Match");
+            } 
+            else if(pairs_array[0] != pairs_array[1]) {
+                console.log("Try again!")
             }
 
-            if (pairs_array.length == 2) {
-                pairs_array = [];
-            }
+            // if (pairs_array.length == 2) {
+            //     pairs_array = [];
+            // }
         });
     }
 }
@@ -61,16 +58,4 @@ function randomImage() {
     });
 
     return imgArr;
-}
-
-function hideImage(cell){
-    cell.style.background = "blue";
-    cell.innerHTML = "";
-    cell.clicked = false;
-}
-
-function newPair(cell){
-    pairCompleted++;
-    cell.completed = true;
-    cell.style.background = "purple";
 }
